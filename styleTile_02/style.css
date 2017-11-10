@@ -1,0 +1,150 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    font-family: 'Open Sans';
+}
+h1
+{
+    font-size: 3rem;
+    font-weight: 800;
+}
+h2
+{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+h3
+{
+    font-size: 2rem;
+    font-weight:400;
+}
+h4
+{
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+h5
+{
+    font-size: 1rem;
+    font-weight: 100;
+}
+h6
+{
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: rgba(0, 0, 0, 0.5);
+}
+p
+{
+    font-size: 1rem;
+}
+a
+{
+    text-decoration: none;
+    color: #000;
+}
+.padding01
+{
+    padding-left:0.5em;
+}
+/************************ main section article *****************************/
+header
+{
+    width: 100% ;
+    height: auto;
+    float: left;
+}
+header img
+{
+    width: 20%;
+    height: auto;
+    float: left;
+    margin: 1em;
+}
+main
+{
+    width: 100%;
+    height: auto;
+    display: grid;
+}
+section
+{
+    width: 100%;
+    height: auto;
+    margin: 0.5em;
+    float: left;
+}
+.boxes_rectangles
+{
+    width: 100%;
+    height: auto;
+    float: left;
+}
+section .boxes_rectangles
+{
+    display: grid;
+}
+#color_1
+{
+    width: 10em;
+    height: 10em;
+    margin: 1em;
+    background-color: #fb8174;
+    border: solid black 2px;
+}
+#color_2
+{
+    width: 10em;
+    height: 10em;
+    margin: 1em;
+    background-color: #fedd01;
+    border: solid black 2px;
+}
+#color_3
+{
+    width: 10em;
+    height: 10em;
+    margin: 1em;
+    background-color: #f7941d;
+    border: solid black 2px;
+}
+#color_4
+{
+    width: 10em;
+    height: 10em;
+    margin: 1em;
+    background-color: #000000;
+    border: solid black 2px;
+}
+#color_5
+{
+    width: 10em;
+    height: 10em;
+    margin: 1em;
+    background-color: #ffffff;
+    border: solid black 2px;
+}
+#imgSS img
+{
+    width: 95%;
+    height: auto;
+    margin: 1em;
+}
+.paddingLeft20
+{
+    padding-left: 8em;
+}
+.boxes_rectangles p:nth-child(odd)
+{
+    color: #fb8174;
+}
+.boxes_rectangles p:nth-child(even)
+{
+    color: #f7941d;
+    padding-left: 2em;
+}

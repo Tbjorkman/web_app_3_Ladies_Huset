@@ -1,0 +1,227 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+
+    background: #fb8174; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left top, #fb8174, #fcd116, #f7941d); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #fb8174, #fcd116, #f7941d); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #fb8174, #fcd116, #f7941d); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, #fb8174, #fcd116, #f7941d); /* Standard syntax */
+}
+h1
+{
+    font-size: 2em;
+    font-weight: 400;
+    color: #ce1126;
+}
+h2
+{
+    font-size: 1.5em;
+    font-weight: 200;
+    color: #ce1126;
+}
+h4
+{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+h5
+{
+    font-size: 1em;
+    font-weight: bolder;
+    color: #ce1126;
+}
+h6
+{
+    font-style: italic;
+    font-size: 1em;
+    color: #000000;
+}
+a
+{
+    text-decoration: none;
+    color: black;
+}
+/************************ mobile first ************************/
+/************************ additional classes ************************/
+.hidden
+{
+    display: none;
+}
+.white
+{
+    background-color: #FFFFFF;
+}
+.arrow_carrot
+{
+    transform: rotate(-90deg);
+    animation: rotatingArrow ease 0.30s ;
+}
+@keyframes rotatingArrow {
+    to
+    {
+        transition: all 0.15s;
+    }
+    from
+    {
+        transition: all 0.15s;
+    }
+}
+.displayBlock
+{
+    display:block;
+}
+/************************ off screen nav mobile ************************/
+aside
+{
+    width: 100vw;
+    height: 50vh;
+    margin-top: 5em;
+    padding: 2em;
+    background-color: white;
+    position: absolute;
+}
+nav
+{
+    width: 100%;
+    float: right;
+}
+nav ul
+{
+    width: 100%;
+    text-align: right;
+}
+nav ul li
+{
+    width: 100%;
+    height: auto;
+    list-style: none;
+    line-height: 2.5em;
+    border-bottom: solid 1px rgba(0,0,0,0.2);
+}
+/************************ main section mobile ************************/
+main
+{
+    width: 100vw;
+    height: 100vh;
+}
+article
+{
+    width: 96%;
+    height: auto;
+    padding: 1em;
+    margin: 0.5em;
+    border-bottom: solid 1px rgba(251, 129, 116, 0.9);
+}
+.event article
+{
+    display: grid;
+    cursor: pointer;
+}
+article img
+{
+    width: 98%;
+    height: auto;
+    margin: 0.5em;
+    float: left;
+}
+.event article h1
+{
+    margin: 0.2em;
+}
+.excerpt
+{
+    width: 98%;
+    height:auto;
+    float: left;
+    margin: 0.5em;
+}
+.price
+{
+    margin: 0.5em;
+}
+
+/************************ single event page ************************/
+#single
+{
+    width: 96%;
+    height: auto;
+    padding: 1em;
+    display: grid;
+}
+.date_time
+{
+    display: flex;
+}
+.date_time h4
+{
+    margin: 0.2em;
+}
+.price_venue
+{
+    display: flex;
+}
+.price_venue h4
+{
+    margin: 0 2em 1em 0;
+}
+/************************ header logo mobile ************************/
+header
+{
+    width: 100%;
+    height: 5.5em;
+    padding: 1em;
+}
+#secondHeader
+{
+    width: 100vw;
+    height: auto;
+    padding-left: 1em;
+    margin-top: 0.5em;
+    display: flex;
+}
+#logo_header
+{
+    width: 50%;
+    height: auto;
+    float: left;
+}
+#arrow_nav_header
+{
+    width: 10%;
+    height: auto;
+    float: right;
+}
+/*************************** about page and map ******************************/
+#map
+{
+    width: 90%;
+    height: auto;
+    margin: 1em;
+}
+/*************************** footer, info, social media links ******************************/
+footer
+{
+    width: 100%;
+    height: auto;
+}
+footer ul
+{
+    display: flex;
+}
+footer ul li
+{
+    list-style: none;
+    margin: 0.2em 1em 0.2em 2.2em;
+}
+#contactInfo
+{
+    margin: 1em;
+}
