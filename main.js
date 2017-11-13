@@ -1,6 +1,6 @@
 function getAllEvents()
 {
-    fetch("http://tabithabjorkman.com/wordpress/wp-json/wp/v2/events?_embed")
+    fetch("https://tabithabjorkman.com/wordpress/wp-json/wp/v2/events?_embed")
     .then(res=>res.json())
     .then(showEvents);
 }
@@ -9,7 +9,7 @@ function getSingleEventById(myId)
 {
     console.log(myId);
     //fetch("http://tabithabjorkman.com/wordpress/wp-json/wp/v2/" + myId + "/?_embed")
-    fetch("http://tabithabjorkman.com/wordpress/wp-json/wp/v2/events/" + myId + "/?_embed")
+    fetch("https://tabithabjorkman.com/wordpress/wp-json/wp/v2/events/" + myId + "/?_embed")
         .then(res=>res.json())
         .then(showSingleEvent);
 }
