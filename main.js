@@ -1,18 +1,51 @@
+/*
 function getAllEvents()
 {
     fetch("https://tabithabjorkman.com/wordpress/wp-json/wp/v2/events?_embed")
     .then(res=>res.json())
     .then(showEvents);
 }
+ */
+
+
+function getCategories() {
+    fetch("https://tabithabjorkman.com/wordpress/wp-json/wp/v2/categories?_embed")
+        .then(res=>res.json())
+        .then(showCatetories);
+}
+
+function getEventsByCategory(id) {
+    fetch("https://tabithabjorkman.com/wordpress/wp-json/wp/v2/events?_embed&categories=" + id)
+        .then(res=>res.json())
+        .then(showEvents    );
+}
 
 function getSingleEventById(myId)
 {
-    console.log(myId);
-    //fetch("http://tabithabjorkman.com/wordpress/wp-json/wp/v2/" + myId + "/?_embed")
+    //console.log(myId);
     fetch("https://tabithabjorkman.com/wordpress/wp-json/wp/v2/events/" + myId + "/?_embed")
         .then(res=>res.json())
         .then(showSingleEvent);
 }
+
+function showCatetories(categories) {
+    //console.log(categories);
+    let catList = document.querySelector('#catList').content;
+
+    categories.forEach(function(cat){
+        if(cat.count > 0)
+        {
+            let clone = catList.cloneNode(true);
+            let parent = document.querySelector('#categoryMenu');
+            clone.querySelector('a').textContent = cat.name;
+            clone.querySelector('a').setAttribute('href', 'index.html?cat_id=' + cat.id);
+            parent.appendChild(clone);
+        }
+
+    });
+
+}
+
 
 function showSingleEvent(json) {
     //console.log(document.querySelector('.date'));
@@ -33,7 +66,6 @@ function showEvents(e_data){
     let template = document.querySelector("#eventTemplate").content;
 
     e_data.forEach(function(theEvent){
-    console.log(theEvent);
 
     let clone = template.cloneNode(true);
     let title = clone.querySelector("h2");
@@ -48,8 +80,9 @@ function showEvents(e_data){
     title.textContent = theEvent.title.rendered;
     excerpt.innerHTML = theEvent.excerpt.rendered;
     price.textContent = theEvent.acf.price;
-
     link.setAttribute("href", "event_page.html?id="+theEvent.id);
+
+        console.log(clone);
 
     list.appendChild(clone);
     });
@@ -57,21 +90,34 @@ function showEvents(e_data){
 
 let searchParams = new URLSearchParams(window.location.search);
 let id = searchParams.get("id");
+let catId = searchParams.get('cat_id');
 //console.log(id);
+
+
+getCategories();
+
 
 if(id)
 {
- getSingleEventById(id);
+    getSingleEventById(id);
+}
+if(catId)
+{
+    getEventsByCategory(catId);
 }
 else
 {
-    getAllEvents();
+    //getAllEvents();
+    getEventsByCategory(13);
+    getEventsByCategory(10);
+    getEventsByCategory(7);
 }
 
 
 let menu = document.querySelector('#off_canvas_menu');
 let caret = document.querySelector('#arrow_nav_header');
-//let myLink = document.querySelector('#arrow_nav_header');
+let subMenu = document.querySelector('#categoryMenu');
+let subCaret = document.querySelector('#subCategoryMenu');
 
 //myLink.addEventListener('click', openMenu);
 //USE WHEN READY TO TEST
@@ -80,6 +126,11 @@ let caret = document.querySelector('#arrow_nav_header');
 function toggleMenu() {
     menu.classList.toggle('displayBlock');
     caret.classList.toggle('arrow_carrot');
+}
+
+function toggleSubMenu() {
+    subMenu.classList.toggle('displayBlock');
+    subCaret.classList.toggle('arrow_carrot');
 }
 
 

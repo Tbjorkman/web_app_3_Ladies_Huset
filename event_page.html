@@ -13,7 +13,12 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#">Categories</a>
+            <li><a href="#">Categories <i id="subCategoryMenu" class="fa fa-chevron-left fa-lg" onclick="toggleSubMenu()"></i></a>
+                <ul id="categoryMenu" class="hidden">
+                    <template id="catList">
+                        <li><a href="#">Category Items</a></li>
+                    </template>
+                </ul>
             <li><a href="about.html">About</a></li>
             <li><a href="#">Volunteer</a></li>
         </ul>
