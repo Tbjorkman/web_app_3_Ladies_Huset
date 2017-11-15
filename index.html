@@ -6,25 +6,26 @@
     <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
     <link href="style.css" type="text/css" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="1 80x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="android-chrome-192x192.png">
     <link rel="manifest" href="manifest.json">
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
     <meta name="theme-color" content="#ec8779">
     <title>Huset Event List</title>
 </head>
-<body>
+<body onload="menuSlide()">
 <aside id="off_canvas_menu" class="hidden">
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#">Categories <i id="subCategoryMenu" class="fa fa-chevron-left fa-lg" onclick="toggleSubMenu()"></i></a>
+            <li><a href="#"  onclick="toggleSubMenu()">Categories <i id="subCategoryMenu" class="fa fa-chevron-left fa-lg"></i></a>
                 <ul id="categoryMenu" class="hidden">
                     <template id="catList">
                         <li><a href="#">Category Items</a></li>
                     </template>
                 </ul>
+            </li>
             <li><a href="about.html">About</a></li>
             <li><a href="#">Volunteer</a></li>
         </ul>
@@ -33,10 +34,14 @@
 <main>
     <header class="white">
         <a href="index.html"><img id="logo_header" src="imgs/Huset_logo_9_no_arrow.png" alt="Huset's logo"></a>
-        <a href="#" onclick="toggleMenu()"><img  id="arrow_nav_header" src="imgs/Huset_logo_0_deg_9_arrow.jpg" alt="Arrow for menu"></a>
+        <a href="#" onclick="toggleMenu()"><img id="arrow_nav_header" src="imgs/Huset_logo_0_deg_9_arrow.png" alt="Arrow for menu"></a>
     </header>
     <div id="secondHeader">
         <h1>Presents</h1>
+        <form action="#">
+            <input type="text" name="search" id="search" placeholder="Search">
+            <button type="submit"><i class="fa fa-search fa-2x" aria-hidden="true"></i> </button>
+        </form>
     </div>
 
 
@@ -49,6 +54,8 @@
             <article class="event">
                 <img src="" alt="">
                 <h2></h2>
+                <h4 id="date"></h4>
+                <h4 id="time"></h4>
                 <div class="excerpt"></div>
                 <p class="price"> € <span></span></p>
             </article>

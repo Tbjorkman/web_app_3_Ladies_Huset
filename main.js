@@ -11,13 +11,13 @@ function getAllEvents()
 function getCategories() {
     fetch("https://tabithabjorkman.com/wordpress/wp-json/wp/v2/categories?_embed")
         .then(res=>res.json())
-        .then(showCatetories);
+        .then(showCategories);
 }
 
 function getEventsByCategory(id) {
     fetch("https://tabithabjorkman.com/wordpress/wp-json/wp/v2/events?_embed&categories=" + id)
         .then(res=>res.json())
-        .then(showEvents    );
+        .then(showEvents);
 }
 
 function getSingleEventById(myId)
@@ -28,7 +28,7 @@ function getSingleEventById(myId)
         .then(showSingleEvent);
 }
 
-function showCatetories(categories) {
+function showCategories(categories) {
     //console.log(categories);
     let catList = document.querySelector('#catList').content;
 
@@ -69,6 +69,8 @@ function showEvents(e_data){
 
     let clone = template.cloneNode(true);
     let title = clone.querySelector("h2");
+    let date = clone.querySelector("#date");
+    let time = clone.querySelector("#time");
     let excerpt = clone.querySelector(".excerpt");
     let price = clone.querySelector(".price span");
     let img = clone.querySelector("img");
@@ -78,6 +80,8 @@ function showEvents(e_data){
     img.setAttribute("src", theEvent._embedded["wp:featuredmedia"]
         [0].media_details.sizes.medium.source_url);
     title.textContent = theEvent.title.rendered;
+    date.textContent = theEvent.acf.event_date;
+    time.textContent = theEvent.acf.time;
     excerpt.innerHTML = theEvent.excerpt.rendered;
     price.textContent = theEvent.acf.price;
     link.setAttribute("href", "event_page.html?id="+theEvent.id);
@@ -116,6 +120,8 @@ else
 
 let menu = document.querySelector('#off_canvas_menu');
 let caret = document.querySelector('#arrow_nav_header');
+//let line1 = document.querySelector('#line_1');
+//let line2 = document.querySelector('#line_2');
 let subMenu = document.querySelector('#categoryMenu');
 let subCaret = document.querySelector('#subCategoryMenu');
 
@@ -123,9 +129,18 @@ let subCaret = document.querySelector('#subCategoryMenu');
 //USE WHEN READY TO TEST
 //myLink.addEventListener('touchend', rotateCarrot);
 
+//document.onload(menuSlide());
+
+function menuSlide() {
+    caret.classList.add('slide');
+}
+
 function toggleMenu() {
+    caret.classList.remove('slide');
     menu.classList.toggle('displayBlock');
     caret.classList.toggle('arrow_carrot');
+    //line1.classList.toggle('hidden');
+    //line2.classList.toggle('hidden');
 }
 
 function toggleSubMenu() {

@@ -8,17 +8,18 @@
     <link href="style.css" type="text/css" rel="stylesheet">
     <title>Huset Event</title>
 </head>
-<body>
+<body onload="menuSlide()">
 <aside id="off_canvas_menu" class="hidden">
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#">Categories <i id="subCategoryMenu" class="fa fa-chevron-left fa-lg" onclick="toggleSubMenu()"></i></a>
+            <li><a href="#"  onclick="toggleSubMenu()">Categories <i id="subCategoryMenu" class="fa fa-chevron-left fa-lg"></i></a>
                 <ul id="categoryMenu" class="hidden">
                     <template id="catList">
                         <li><a href="#">Category Items</a></li>
                     </template>
                 </ul>
+            </li>
             <li><a href="about.html">About</a></li>
             <li><a href="#">Volunteer</a></li>
         </ul>
@@ -27,7 +28,7 @@
 <main>
     <header class="white">
         <a href="index.html"><img id="logo_header" src="imgs/Huset_logo_9_no_arrow.png" alt="Husets logo"></a>
-        <a href="#" onclick="toggleMenu()"><img  id="arrow_nav_header" src="imgs/Huset_logo_0_deg_9_arrow.jpg" alt="Arrow for menu"></a>
+        <a href="#" onclick="toggleMenu()"><img  id="arrow_nav_header" src="imgs/Huset_logo_0_deg_9_arrow.png" alt="Arrow for menu"></a>
     </header>
     <div id="secondHeader">
         <a href="index.html">Huset / &nbsp</a><h5>Invites you to...</h5>
