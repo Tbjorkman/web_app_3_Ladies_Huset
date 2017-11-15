@@ -28,10 +28,21 @@
 <main>
     <header class="white">
         <a href="index.html"><img id="logo_header" src="imgs/Huset_logo_9_no_arrow.png" alt="Huset's logo"></a>
-        <a href="#" onclick="toggleMenu()"><img  id="arrow_nav_header" src="imgs/Huset_logo_0_deg_9_arrow.png" alt="Arrow for menu"></a>
+        <a href="#" onclick="toggleMenu()">
+            <div id="hamburgerMenu">
+                <div id="line_1"></div>
+                <div id="line_2"></div>
+                <div id="line_3"></div>
+            </div>
+
+            <img class="hidden" id="arrow_nav_header" src="imgs/Huset_logo_0_deg_9_arrow.png" alt="Arrow for menu">
+        </a>
     </header>
     <div id="secondHeader">
-        <h1>About</h1>
+        <form action="#">
+            <input type="text" name="search" id="search" placeholder="Search">
+            <button type="submit"><i class="fa fa-search fa-2x" aria-hidden="true"></i> </button>
+        </form>
     </div>
     <section id="map">
         <h4>Where to find us:</h4>

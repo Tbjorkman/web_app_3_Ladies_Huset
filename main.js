@@ -120,8 +120,9 @@ else
 
 let menu = document.querySelector('#off_canvas_menu');
 let caret = document.querySelector('#arrow_nav_header');
-//let line1 = document.querySelector('#line_1');
-//let line2 = document.querySelector('#line_2');
+let line1 = document.querySelector('#line_1');
+let line2 = document.querySelector('#line_2');
+let line3 = document.querySelector('#line_3');
 let subMenu = document.querySelector('#categoryMenu');
 let subCaret = document.querySelector('#subCategoryMenu');
 
@@ -131,17 +132,23 @@ let subCaret = document.querySelector('#subCategoryMenu');
 
 //document.onload(menuSlide());
 
-function menuSlide() {
+ /*
+ function menuSlide() {
+
     caret.classList.add('slide');
 }
+*/
+
 
 function toggleMenu() {
-    caret.classList.remove('slide');
     menu.classList.toggle('displayBlock');
+    caret.classList.toggle('hidden');
     caret.classList.toggle('arrow_carrot');
-    //line1.classList.toggle('hidden');
-    //line2.classList.toggle('hidden');
+    line1.classList.toggle('hidden');
+    line2.classList.toggle('hidden');
+    line3.classList.toggle('hidden');
 }
+
 
 function toggleSubMenu() {
     subMenu.classList.toggle('displayBlock');

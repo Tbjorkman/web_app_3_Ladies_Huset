@@ -14,7 +14,7 @@
     <meta name="theme-color" content="#ec8779">
     <title>Huset Event List</title>
 </head>
-<body onload="menuSlide()">
+<body>
 <aside id="off_canvas_menu" class="hidden">
     <nav>
         <ul>
@@ -34,15 +34,26 @@
 <main>
     <header class="white">
         <a href="index.html"><img id="logo_header" src="imgs/Huset_logo_9_no_arrow.png" alt="Huset's logo"></a>
-        <a href="#" onclick="toggleMenu()"><img id="arrow_nav_header" src="imgs/Huset_logo_0_deg_9_arrow.png" alt="Arrow for menu"></a>
+        <a href="#" onclick="toggleMenu()">
+            <div id="hamburgerMenu">
+                <div id="line_1"></div>
+                <div id="line_2"></div>
+                <div id="line_3"></div>
+            </div>
+
+            <img class="hidden" id="arrow_nav_header" src="imgs/Huset_logo_0_deg_9_arrow.png" alt="Arrow for menu">
+        </a>
     </header>
     <div id="secondHeader">
-        <h1>Presents</h1>
         <form action="#">
             <input type="text" name="search" id="search" placeholder="Search">
             <button type="submit"><i class="fa fa-search fa-2x" aria-hidden="true"></i> </button>
         </form>
     </div>
+    <div id="thirdHeader">
+        <h1>Presents</h1>
+    </div>
+
 
 
     <section id="list">

@@ -57,7 +57,7 @@ a
 }
 .white
 {
-    background-color: #FFFFFF;
+    background-color: cornsilk;
 }
 .displayBlock
 {
@@ -83,21 +83,6 @@ a
 }
 
 
-.slide
-{
-    animation: slide 2s forwards;
-}
-
-@keyframes slide {
-    from {
-        transform: translate(-1000%, 0);
-    }
-
-    to {
-        transform: translate(30%,0);
-    }
-}
-
 /************************ off screen nav mobile ************************/
 aside
 {
@@ -105,7 +90,7 @@ aside
     height: auto;
     margin-top: 5em;
     padding: 2em;
-    background-color: white;
+    background-color: cornsilk;
     position: absolute;
 }
 nav
@@ -210,6 +195,7 @@ header
     width: 100%;
     height: 5.5em;
     padding: 0.5em;
+    display: flex;
 }
 #secondHeader
 {
@@ -221,15 +207,18 @@ header
 }
 #secondHeader form
 {
-    width: 25vw;
+    width: 100vw;
     height: 2em;
-    margin-left: 2em;
+    margin-left: 1em;
     margin-top: 0.2em;
     display: flex;
 }
 #secondHeader form input
 {
+    width: 75vw;
     border-radius: 7px;
+    font-size: 1.2em;
+    background-color: cornsilk;
 }
 #secondHeader form button
 {
@@ -242,21 +231,40 @@ header
     color: #ce1126;
     text-shadow: 2px 0 2px #000000;
 }
+#thirdHeader
+{
+    width: 100vw;
+    height: auto;
+    padding-left: 1em;
+    margin-top: 0.5em;
+}
 #logo_header
 {
-    width: 50%;
+    width: 60%;
     height: auto;
     float: left;
+}
+#hamburgerMenu
+{
+    width: 4em;
+    margin-top: 0.5em;
+}
+#line_1, #line_2, #line_3
+{
+    width: 3em;
+    height: 0.2em;
+    border-radius: 5px;
+    margin: 0.6em 0 0 0.2em;
+    background-color: black;
 }
 #arrow_nav_header
 {
     width: 1.9em;
     height: auto;
-    margin-left: 8em;
+    margin-left: 0.5em;
     position: absolute;
     z-index: 10;
 }
-
 /*************************** about page and map ******************************/
 #map
 {
