@@ -19,7 +19,7 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#"  onclick="toggleSubMenu()">Categories <i id="subCategoryMenu" class="fa fa-chevron-left fa-lg"></i></a>
+            <li><a href="#"  onclick="toggleSubMenu()"> Event Categories <i id="subCategoryMenu" class="fa fa-chevron-left fa-lg"></i></a>
                 <ul id="categoryMenu" class="hidden">
                     <template id="catList">
                         <li><a href="#">Category Items</a></li>
@@ -51,7 +51,7 @@
         </form>
     </div>
     <div id="thirdHeader">
-        <h1>Presents</h1>
+        <h1 class="margin_b_t">Huset culture house presents</h1>
     </div>
 
 
@@ -65,8 +65,11 @@
             <article class="event">
                 <img src="" alt="">
                 <h2></h2>
-                <h4 id="date"></h4>
-                <h4 id="time"></h4>
+                <div id="dateTime">
+                    <h4 id="date"></h4>
+                    <h4 id="time"></h4>
+                    <button class="cta-more"><i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i> </button>
+                </div>
                 <div class="excerpt"></div>
                 <p class="price"> € <span></span></p>
             </article>
